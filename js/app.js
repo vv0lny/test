@@ -6,11 +6,7 @@ angular.module('myApp',[])
         $scope.results = data.feed.entry;
     });
     
-    function Main($scope){
-        $scope.filtering = "aa";   
-    }
-    
     $scope.finder = function(entry){
-        return ~entry.title.$t.indexOf($scope.filtering);
+        return ~entry.title.$t.toLowerCase().indexOf($scope.filtering.toLowerCase());
     };
 });
