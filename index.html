@@ -6,8 +6,9 @@
 </head>
 <body ng-app="myApp">
         <h1>JSON</h1>
+        Search: <input type="text" ng-model="filtering">
         <ul ng-controller="myCtrl">
-            <li ng-repeat="result in results">
+            <li ng-repeat="result in results | filter:{$:filtering}">
                 {{result.title.$t}}
             </li>
         </ul>
