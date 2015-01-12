@@ -5,4 +5,12 @@ angular.module('myApp',[])
     $http.jsonp(url).success(function(data) {
         $scope.results = data.feed.entry;
     });
+    
+    function Main($scope){
+        $scope.filtering = "aa";   
+    }
+    
+    $scope.finder = function(entry){
+        return ~entry.title.$t.indexOf($scope.filtering);
+    };
 });
