@@ -1,0 +1,20 @@
+label {
+        display: inline-block;
+        font-weight: bold;
+        min-width: 100px;
+      }
+      
+      span.InlineEditable {
+          display: inline-block;
+          min-width: 15em;
+          cursor: text;
+      }
+      
+span.InlineEditable:hover {
+          background-color: #FFFFD7;
+    
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
