@@ -23,6 +23,9 @@ angular.module('myApp',["firebase"])
         ItemFactory.removeItem(item);
     };
     
+    $scope.updateItem = function(item){
+        ItemFactory.updateItem(item);  
+    };
 })
 
 .factory('ItemFactory',function($firebase,FIREBASE_URI){
@@ -41,18 +44,18 @@ angular.module('myApp',["firebase"])
     }
     
     var removeItem = function(item){
-        console.log(item);
         items.$remove(item);
     }
     
-    var updateItem = function(id){
-        
+    var updateItem = function(item){
+        items.$save(item);
     }
     
     return{
         getItems: getItems,
         addItem: addItem,
-        removeItem: removeItem
+        removeItem: removeItem,
+        updateItem: updateItem
     }
     
 });

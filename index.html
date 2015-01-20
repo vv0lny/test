@@ -10,12 +10,12 @@
     <div ng-controller="firebaseCtrl" ng-cloak>
         <ul>
             <div ng-repeat="item in items">
-                <input ng-model="item.text"/>
+                <input ng-model="item.text" ng-change="updateItem(item)" />
                 <input type="button" value="X"/ ng-click="removeItem(item)">
             </div>
         </ul>
         <form ng-submit="addItem(newItemText)">
-            <input type="text" ng-model="newItemText" name=""/>
+            Add new: <input type="text" ng-model="newItemText" name=""/>
         </form>
     </div>
     
